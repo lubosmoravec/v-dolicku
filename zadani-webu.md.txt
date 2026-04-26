@@ -1,0 +1,324 @@
+# Zadání webu: V Dolíčku
+
+## 1. Základní informace
+
+### Název projektu
+V Dolíčku
+
+### Doména
+vdolicku.cz
+
+### Typ webu
+Jednostránková landing page.
+
+### Účel webu
+Web má představit ubytování v tiny housu na samotě u lesa a přivést návštěvníka k rezervaci pobytu.
+
+### Hlavní akce návštěvníka
+Rezervovat pobyt přes rezervační formulář.
+
+### Krátké shrnutí projektu
+V Dolíčku je ubytování na samotě u lesa v tiny housu pro 2 osoby. Nabízí klidný odpočinek v přírodě, velkou terasu, výhled do zeleně a zázemí pro práci na dálku.
+
+
+---
+
+## 2. Hlavní sdělení webu
+
+### Hlavní nadpis H1
+Klidné ubytování v tiny housu v podhůří Orlických hor
+
+### Podnadpis
+Útulný tiny house pro dva na samotě u lesa, s velkou terasou, výhledem do přírody a prostorem pro odpočinek i práci na dálku.
+
+### Claim / slogan
+Odpočinek, práce a ticho přírody
+
+### Hlavní CTA tlačítko
+Rezervovat pobyt
+
+### Cíl CTA
+Tlačítko má vést na sekci s rezervačním formulářem.
+
+
+---
+
+## 3. Cílová skupina
+
+Landing page má oslovit hlavně:
+
+- páry na romantický víkend
+- lidi pracující na dálku
+- jednotlivce hledající klid
+- lidi z města, kteří chtějí na chvíli zpomalit
+- hosty, kteří hledají digitální detox a pobyt v přírodě
+
+### Co návštěvníci hledají
+
+- klid
+- samotu
+- přírodu
+- jednoduché a útulné ubytování
+- místo pro odpočinek
+- možnost pracovat na dálku mimo město
+- soukromí pro dvě osoby
+
+
+---
+
+## 4. Atmosféra a styl komunikace
+
+### Hlavní pocit z webu
+Web má působit jako:
+
+- klidné místo na samotě
+- únik z města
+- prostor pro digitální detox
+- přírodní zázemí pro práci na dálku
+- jednoduchý a nerušený pobyt u lesa
+
+### Styl textů
+Texty mají být:
+
+- klidné
+- poetické
+- přírodní
+- nerušivé
+- útulné
+- lidské
+- srozumitelné
+
+### Vyhnout se
+
+- agresivnímu prodeji
+- přehnanému luxusu
+- klišé
+- příliš technickému jazyku
+- přeplněnosti textem
+
+
+---
+
+## 5. Vizuální styl
+
+### Celkový dojem
+Web má být:
+
+- jednoduchý
+- vzdušný
+- klidný
+- přehledný
+- nerušivý
+- zaměřený na fotky, prostor a atmosféru místa
+
+### Barvy
+Použít přírodní barevnou kombinaci:
+
+- lesní zelená
+- dřevěně hnědá
+- krémová
+
+Barevnost má navazovat na přírodu, les, dřevo tiny housu a klidné prostředí V Dolíčku.
+
+### Animace
+- Nepoužívat výrazné nebo rušivé animace.
+- Povolit jen jemné přechody, například hover efekt na tlačítku.
+- Důraz na rychlost, čitelnost a klidný dojem.
+
+
+---
+
+## 6. Technologický stack
+
+Použít:
+
+- Astro
+- Tailwind CSS
+
+### Cíl technického řešení
+- rychlá statická landing page
+- jednoduchá údržba obsahu
+- čistý komponentový kód
+- dobrý výkon na mobilu
+- SEO připravený web
+- responzivní zobrazení pro mobil, tablet i desktop
+
+
+---
+
+## 7. Struktura landing page
+
+Web bude jednostránková landing page na doméně vdolicku.cz.
+
+Všechny hlavní informace budou na jedné stránce:
+
+1. Úvodní hero sekce
+2. O místě
+3. Pro koho je pobyt vhodný
+4. Práce na dálku mezi stromy
+5. Vybavení tiny housu
+6. Galerie fotek
+7. Lokalita a mapa
+8. Ceník
+9. Rezervační formulář
+
+
+---
+
+## 8. Navigace
+
+Horní menu bude jednoduché a vzdušné.
+
+### Položky menu
+- O místě
+- Pro koho
+- Vybavení
+- Galerie
+- Lokalita
+- Ceník
+- Rezervace
+
+Vpravo v menu může být zvýrazněné tlačítko:
+
+- Rezervovat pobyt
+
+Menu má na mobilu fungovat jako jednoduché responzivní hamburger menu.
+
+
+---
+
+## 9. Sekce: Hero
+
+### Účel sekce
+Rychle vysvětlit, co je V Dolíčku, navodit klidnou atmosféru a nabídnout jasnou cestu k rezervaci.
+
+### Obsah
+H1:
+
+> Klidné ubytování v tiny housu v podhůří Orlických hor
+
+Podnadpis:
+
+> Útulný tiny house pro dva na samotě u lesa, s velkou terasou, výhledem do přírody a prostorem pro odpočinek i práci na dálku.
+
+CTA tlačítko:
+
+> Rezervovat pobyt
+
+Doplňkový claim:
+
+> Odpočinek, práce a ticho přírody
+
+### Vizuál
+- použít velkou atmosférickou fotku tiny housu, terasy nebo okolní přírody
+- fotka má působit klidně, přírodně a nerušivě
+- pokud fotka ještě není dostupná, použít placeholder s komentářem:
+  `TODO: doplnit hlavní hero fotografii`
+
+
+---
+
+## 10. Sekce: O místě
+
+### Účel sekce
+Vytvořit klidnou, poetickou atmosféru a představit V Dolíčku jako malé útočiště na samotě u lesa.
+
+### Navržený text
+> V Dolíčku je malé útočiště na samotě u lesa, kde se ráno probouzí pomalu a večery patří tichu, terase a výhledu do přírody. Tiny house je určený pro dva, kteří chtějí na chvíli zpomalit, odpočinout si nebo v klidu pracovat daleko od ruchu města.
+
+### Hlavní výhody
+- útulný prostor pro dva
+- velká terasa pro odpočinek venku
+- výhled do přírody
+- samota u lesa
+
+
+---
+
+## 11. Sekce: Pro koho je pobyt vhodný
+
+### Účel sekce
+Pomoci návštěvníkovi rychle poznat, jestli je pobyt vhodný právě pro něj.
+
+### Obsah
+Pobyt je vhodný pro:
+
+- páry na klidný nebo romantický víkend
+- jednotlivce hledající ticho a samotu
+- lidi pracující na dálku
+- hosty, kteří chtějí digitální detox
+- ty, kdo chtějí vyměnit město za les, terasu a výhled do zeleně
+
+### Navržený text
+> V Dolíčku najdou prostor ti, kteří nepotřebují mnoho. Jen klid, pohodlí, přírodu kolem sebe a čas, který může plynout pomaleji.
+
+
+---
+
+## 12. Sekce: Práce na dálku mezi stromy
+
+### Účel sekce
+Zdůraznit, že V Dolíčku není jen místo na odpočinek, ale i klidné zázemí pro nerušenou práci na dálku.
+
+### Obsah sekce
+- Wi-Fi připojení
+- pracovní místo na notebook
+- ticho a soukromí
+- výhled do přírody
+- možnost střídat práci s odpočinkem na terase
+- vhodné pro jednotlivce nebo pár, který chce na pár dní změnit prostředí
+
+### Navržený text
+> V Dolíčku můžete na chvíli vyměnit kancelář za výhled do zeleně. Tiny house nabízí Wi-Fi, místo na notebook a klid, ve kterém se dobře soustředí. A když je čas vypnout, stačí otevřít dveře na terasu a nechat práci na chvíli za sebou.
+
+
+---
+
+## 13. Sekce: Vybavení tiny housu
+
+### Účel sekce
+Srozumitelně vypsat, co hosté najdou uvnitř i venku.
+
+### Vybavení
+- Wi-Fi
+- pracovní místo na notebook
+- kuchyňka
+- lednice
+- varná deska
+- kávovar
+- koupelna
+- sprcha
+- WC
+- topení
+- klimatizace
+- velká terasa
+- gril
+- ohniště
+- parkování
+- ručníky a povlečení
+
+### Doporučení pro zobrazení
+Vybavení zobrazit přehledně v ikonách nebo jednoduchých kartách.
+
+
+---
+
+## 14. Sekce: Galerie
+
+### Účel sekce
+Ukázat atmosféru místa, tiny house, terasu, okolní přírodu a pocit samoty.
+
+### Požadavky
+- použít vlastní fotografie dodané zadavatelem
+- galerie má být součástí jedné landing page
+- zobrazit 6–12 fotografií
+- fotky optimalizovat pro rychlé načítání
+- na mobilu zobrazit přehledně pod sebou nebo v jednoduché mřížce
+- na desktopu zobrazit jako vzdušnou galerii v mřížce
+- po kliknutí na fotku může být jednoduchý náhled ve větší velikosti
+- použít alt texty v češtině
+- fotky mají ukázat tiny house, velkou terasu, výhled do přírody, okolí lesa a atmosféru samoty
+
+### Doporučené umístění fotek v projektu
+```text
+public/images/gallery/

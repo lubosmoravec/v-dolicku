@@ -1,0 +1,114 @@
+---
+const links = [
+  { href: "#o-miste", label: "O místě" },
+  { href: "#pro-koho", label: "Pro koho" },
+  { href: "#vybaveni", label: "Vybavení" },
+  { href: "#galerie", label: "Galerie" },
+  { href: "#lokalita", label: "Lokalita" },
+  { href: "#cenik", label: "Ceník" },
+  { href: "#rezervace", label: "Rezervace" },
+];
+---
+
+<header class="sticky top-0 z-40 bg-cream-50/85 backdrop-blur border-b border-cream-200/70">
+  <nav
+    aria-label="Hlavní"
+    class="max-w-6xl mx-auto px-5 sm:px-8 h-44 sm:h-52 flex items-center justify-between"
+  >
+    <a href="#" class="flex items-center gap-5" aria-label="V Dolíčku — domů">
+      <img
+        src="/images/logo.png"
+        alt=""
+        width="192"
+        height="192"
+        class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover ring-1 ring-cream-200 shadow-md"
+        loading="eager"
+      />
+      <span class="font-display text-3xl sm:text-4xl text-forest-700">V Dolíčku</span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-7 text-sm text-forest-700">
+      {links.slice(0, -1).map((l) => (
+        <li>
+          <a
+            href={l.href}
+            class="hover:text-forest-500 transition-colors"
+          >
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <a
+      href="#rezervace"
+      class="hidden sm:inline-flex items-center bg-forest-600 hover:bg-forest-700 text-cream-50 px-4 py-2 rounded-full text-sm font-medium transition-colors"
+    >
+      Rezervovat pobyt
+    </a>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="lg:hidden p-2 -mr-2 text-forest-700"
+    >
+      <span class="sr-only">Otevřít menu</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+      >
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    hidden
+    class="lg:hidden border-t border-cream-200/70 bg-cream-50"
+  >
+    <ul class="max-w-6xl mx-auto px-5 sm:px-8 py-3 flex flex-col gap-1">
+      {links.map((l) => (
+        <li>
+          <a
+            href={l.href}
+            class="block py-2.5 text-forest-700 hover:text-forest-500"
+          >
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const open = menu.hasAttribute("hidden");
+      if (open) {
+        menu.removeAttribute("hidden");
+        btn.setAttribute("aria-expanded", "true");
+      } else {
+        menu.setAttribute("hidden", "");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+    menu.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        menu.setAttribute("hidden", "");
+        btn.setAttribute("aria-expanded", "false");
+      }),
+    );
+  }
+</script>

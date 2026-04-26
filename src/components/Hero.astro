@@ -1,0 +1,51 @@
+---
+import Marquee from "./Marquee.astro";
+---
+
+<section
+  id="hlavni-obsah"
+  class="relative min-h-[88vh] flex items-end overflow-hidden"
+>
+  <img
+    src="/images/hero.jpg"
+    alt="Pohled na okolní krajinu V Dolíčku"
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <div class="absolute inset-0 bg-forest-800/15" aria-hidden="true"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-tr from-forest-800/75 via-forest-800/35 to-transparent"
+    aria-hidden="true"
+  ></div>
+
+  <Marquee />
+
+  <div class="relative z-10 max-w-6xl mx-auto w-full px-5 sm:px-8 pb-16 sm:pb-24 pt-24">
+    <p class="text-cream-100 text-sm sm:text-base tracking-wide uppercase mb-5 [text-shadow:0_1px_3px_rgba(0,0,0,0.4)]">
+      Odpočinek, práce a ticho přírody
+    </p>
+    <h1 class="font-display text-cream-50 text-4xl sm:text-5xl md:text-6xl leading-[1.1] max-w-3xl [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]">
+      Klidné ubytování v tiny housu v podhůří Orlických hor
+    </h1>
+    <p class="mt-6 text-cream-50 text-lg sm:text-xl max-w-2xl leading-relaxed [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]">
+      Útulný tiny house pro dva na samotě u lesa, s velkou terasou, výhledem do
+      přírody a prostorem pro odpočinek i práci na dálku.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a
+        href="#rezervace"
+        class="inline-flex items-center bg-cream-50 hover:bg-cream-100 text-forest-700 px-7 py-3.5 rounded-full font-medium transition-colors"
+      >
+        Rezervovat pobyt
+      </a>
+      <a
+        href="#o-miste"
+        class="inline-flex items-center bg-transparent ring-1 ring-cream-50/70 hover:bg-cream-50/10 text-cream-50 px-7 py-3.5 rounded-full font-medium transition-colors"
+      >
+        Prohlédnout místo
+      </a>
+    </div>
+  </div>
+</section>

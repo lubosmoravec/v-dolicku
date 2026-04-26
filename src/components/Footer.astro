@@ -1,0 +1,42 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-forest-800 text-cream-100/85">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+    <div>
+      <div class="flex items-center gap-5">
+        <img src="/images/logo.png" alt="" width="160" height="160" class="w-40 h-40 rounded-full object-cover ring-1 ring-cream-50/20" />
+        <span class="font-display text-cream-50 text-3xl">V Dolíčku</span>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed">
+        Klidné ubytování v tiny housu v podhůří Orlických hor. Místo pro
+        odpočinek, práci na dálku a ticho přírody.
+      </p>
+    </div>
+
+    <div class="text-sm">
+      <p class="font-display text-cream-50 mb-3 text-base">Kontakt</p>
+      <ul class="space-y-1.5">
+        <li>E-mail: <span class="text-cream-50">TODO@vdolicku.cz</span></li>
+        <li>Telefon: <span class="text-cream-50">TODO</span></li>
+      </ul>
+    </div>
+
+    <div class="text-sm">
+      <p class="font-display text-cream-50 mb-3 text-base">Rezervace</p>
+      <p>
+        <a href="#rezervace" class="underline underline-offset-4 hover:text-cream-50">
+          Vyplnit rezervační formulář
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="border-t border-cream-50/10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-5 text-xs text-cream-100/60 flex flex-wrap gap-2 justify-between">
+      <span>© {year} V Dolíčku</span>
+      <span>vdolicku.cz</span>
+    </div>
+  </div>
+</footer>

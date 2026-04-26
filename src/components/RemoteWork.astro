@@ -1,0 +1,50 @@
+---
+const points = [
+  "Wi-Fi připojení",
+  "Pracovní místo na notebook",
+  "Ticho a soukromí",
+  "Výhled do přírody",
+  "Práce a odpočinek se dají snadno střídat",
+  "Vhodné pro jednotlivce i pár, který chce změnit prostředí",
+];
+---
+
+<section id="prace-na-dalku" class="py-24 sm:py-32 bg-cream-100">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-5 gap-10 md:gap-14 items-center">
+    <div class="md:col-span-2 order-2 md:order-1">
+      <div class="aspect-[4/5] overflow-hidden rounded-sm bg-cream-200">
+        <img
+          src="/images/gallery/20251020_152532.jpg"
+          alt="Otevřené okno tiny housu s výhledem do korun stromů"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+
+    <div class="md:col-span-3 order-1 md:order-2">
+      <p class="text-forest-500 uppercase tracking-widest text-xs mb-4">
+        Práce na dálku mezi stromy
+      </p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl text-forest-700 leading-tight">
+        Vyměňte kancelář za výhled do zeleně
+      </h2>
+      <p class="mt-7 text-lg text-forest-700/85 leading-relaxed">
+        V Dolíčku můžete na chvíli vyměnit kancelář za výhled do zeleně. Tiny
+        house nabízí Wi-Fi, místo na notebook a klid, ve kterém se dobře
+        soustředí. A když je čas vypnout, stačí otevřít dveře na terasu a nechat
+        práci na chvíli za sebou.
+      </p>
+
+      <ul class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3">
+        {points.map((p) => (
+          <li class="flex items-start gap-3 text-forest-700/90">
+            <span class="mt-2 w-1.5 h-1.5 rounded-full bg-forest-500 shrink-0"></span>
+            <span>{p}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

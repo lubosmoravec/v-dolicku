@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #fbf7f0;
+  --color-cream-100: #f5ecdd;
+  --color-cream-200: #ead9bf;
+  --color-cream-300: #dcc5a1;
+
+  --color-wood-300: #b58c66;
+  --color-wood-400: #936b48;
+  --color-wood-500: #6e4f36;
+  --color-wood-600: #553c28;
+  --color-wood-700: #3d2c1d;
+
+  --color-forest-300: #8aa78c;
+  --color-forest-400: #5e7d62;
+  --color-forest-500: #44603f;
+  --color-forest-600: #344b30;
+  --color-forest-700: #283a25;
+  --color-forest-800: #1d2b1b;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section[id] {
+    scroll-margin-top: 11rem;
+  }
+
+  @media (min-width: 640px) {
+    section[id] {
+      scroll-margin-top: 13rem;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-cream-50);
+    color: var(--color-forest-800);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest-500);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}

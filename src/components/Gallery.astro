@@ -1,0 +1,152 @@
+---
+const photos = [
+  { src: "/images/gallery/20251020_145814.jpg", alt: "Tiny house mezi stromy" },
+  { src: "/images/gallery/20251020_145904.jpg", alt: "Pohled na tiny house od louky" },
+  { src: "/images/gallery/20251020_145921.jpg", alt: "Detail dřevěné fasády" },
+  { src: "/images/gallery/20251020_145958.jpg", alt: "Tiny house s terasou" },
+  { src: "/images/gallery/20251020_150059.jpg", alt: "Velká terasa s výhledem" },
+  { src: "/images/gallery/20251020_150212.jpg", alt: "Okolní příroda kolem tiny housu" },
+  { src: "/images/gallery/20251020_150435.jpg", alt: "Klidné zákoutí u lesa" },
+  { src: "/images/gallery/20251020_150459.jpg", alt: "Pohled z terasy do zeleně" },
+  { src: "/images/gallery/20251020_150533.jpg", alt: "Tiny house v podzimní krajině" },
+  { src: "/images/gallery/20251020_150631.jpg", alt: "Místo na samotě u lesa" },
+  { src: "/images/gallery/20251020_152520.jpg", alt: "Detail interiéru" },
+  { src: "/images/gallery/20251020_152532.jpg", alt: "Útulné zázemí pro dva" },
+];
+---
+
+<section id="galerie" class="py-24 sm:py-32 bg-cream-100">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-forest-500 uppercase tracking-widest text-xs mb-4">Galerie</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl text-forest-700 leading-tight">
+        Atmosféra místa v obrazech
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+      {photos.map((p, i) => (
+        <button
+          type="button"
+          class="gallery-item group relative aspect-square overflow-hidden rounded-sm bg-cream-200 focus-visible:outline-none"
+          data-index={i}
+          aria-label={`Zvětšit fotku: ${p.alt}`}
+        >
+          <img
+            src={p.src}
+            alt={p.alt}
+            loading={i < 3 ? "eager" : "lazy"}
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <dialog
+    id="lightbox"
+    class="bg-transparent p-0 m-0 max-w-none w-full h-full backdrop:bg-forest-800/85"
+    data-photos={JSON.stringify(photos)}
+  >
+    <div class="w-full h-full flex items-center justify-center p-4 sm:p-8">
+      <button
+        type="button"
+        id="lightbox-close"
+        aria-label="Zavřít"
+        class="fixed top-4 right-4 text-cream-50 bg-forest-700/70 hover:bg-forest-700 rounded-full w-11 h-11 flex items-center justify-center z-10"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <button
+        type="button"
+        id="lightbox-prev"
+        aria-label="Předchozí fotka"
+        class="fixed left-2 sm:left-6 top-1/2 -translate-y-1/2 text-cream-50 bg-forest-700/70 hover:bg-forest-700 rounded-full w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center z-10"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+
+      <button
+        type="button"
+        id="lightbox-next"
+        aria-label="Další fotka"
+        class="fixed right-2 sm:right-6 top-1/2 -translate-y-1/2 text-cream-50 bg-forest-700/70 hover:bg-forest-700 rounded-full w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center z-10"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-w-full max-h-full object-contain select-none"
+      />
+
+      <p
+        id="lightbox-counter"
+        class="fixed bottom-5 left-1/2 -translate-x-1/2 text-cream-50/85 text-sm tabular-nums"
+      ></p>
+    </div>
+  </dialog>
+</section>
+
+<script>
+  type Photo = { src: string; alt: string };
+
+  const dialog = document.getElementById("lightbox") as HTMLDialogElement | null;
+  const img = document.getElementById("lightbox-img") as HTMLImageElement | null;
+  const counter = document.getElementById("lightbox-counter");
+  const closeBtn = document.getElementById("lightbox-close");
+  const prevBtn = document.getElementById("lightbox-prev");
+  const nextBtn = document.getElementById("lightbox-next");
+
+  if (dialog && img) {
+    const photos: Photo[] = JSON.parse(dialog.dataset.photos ?? "[]");
+    let current = 0;
+
+    const show = (i: number) => {
+      current = (i + photos.length) % photos.length;
+      const p = photos[current];
+      img.src = p.src;
+      img.alt = p.alt;
+      if (counter) counter.textContent = `${current + 1} / ${photos.length}`;
+    };
+
+    document.querySelectorAll<HTMLButtonElement>(".gallery-item").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        show(Number(btn.dataset.index));
+        dialog.showModal();
+      });
+    });
+
+    closeBtn?.addEventListener("click", () => dialog.close());
+    prevBtn?.addEventListener("click", () => show(current - 1));
+    nextBtn?.addEventListener("click", () => show(current + 1));
+
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!dialog.open) return;
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        show(current + 1);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        show(current - 1);
+      }
+    });
+
+    let touchStartX = 0;
+    dialog.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    dialog.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+  }
+</script>

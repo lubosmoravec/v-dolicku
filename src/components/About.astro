@@ -1,0 +1,34 @@
+---
+const features = [
+  { title: "Útulný prostor pro dva", text: "Tiny house ladí dřevem a měkkým světlem. Dost místa pro klid, pohodlí a delší pobyt." },
+  { title: "Velká terasa", text: "Ranní káva, večerní ticho, oheň a hvězdy. Terasa je hlavní obývák V Dolíčku." },
+  { title: "Výhled do přírody", text: "Z oken i z terasy se otevírá pohled do zeleně. Žádní sousedé, jen les a louka." },
+  { title: "Samota u lesa", text: "Místo na samotě, daleko od ruchu. Stačí vyjít ven a slyšíte jen vítr ve stromech." },
+];
+---
+
+<section id="o-miste" class="py-24 sm:py-32 bg-cream-50">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl">
+      <p class="text-forest-500 uppercase tracking-widest text-xs mb-4">O místě</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl text-forest-700 leading-tight">
+        Malé útočiště na samotě u lesa
+      </h2>
+      <p class="mt-7 text-lg text-forest-700/85 leading-relaxed">
+        V Dolíčku je malé útočiště na samotě u lesa, kde se ráno probouzí pomalu
+        a večery patří tichu, terase a výhledu do přírody. Tiny house je určený
+        pro dva, kteří chtějí na chvíli zpomalit, odpočinout si nebo v klidu
+        pracovat daleko od ruchu města.
+      </p>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+      {features.map((f) => (
+        <div class="border-t border-cream-200 pt-6">
+          <h3 class="text-xl text-forest-700">{f.title}</h3>
+          <p class="mt-2 text-forest-700/80 leading-relaxed">{f.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,95 @@
+---
+const items = [
+  { label: "Wi-Fi", icon: "wifi" },
+  { label: "Pracovní místo", icon: "laptop" },
+  { label: "Kuchyňka", icon: "kitchen" },
+  { label: "Lednice", icon: "fridge" },
+  { label: "Varná deska", icon: "stove" },
+  { label: "Kávovar", icon: "coffee" },
+  { label: "Koupelna", icon: "bath" },
+  { label: "Sprcha", icon: "shower" },
+  { label: "WC", icon: "toilet" },
+  { label: "Topení", icon: "heat" },
+  { label: "Klimatizace", icon: "ac" },
+  { label: "Velká terasa", icon: "deck" },
+  { label: "Gril", icon: "grill" },
+  { label: "Ohniště", icon: "fire" },
+  { label: "Parkování", icon: "parking" },
+  { label: "Ručníky a povlečení", icon: "linen" },
+];
+
+const stroke = "1.5";
+---
+
+<section id="vybaveni" class="py-24 sm:py-32 bg-cream-50">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl">
+      <p class="text-forest-500 uppercase tracking-widest text-xs mb-4">Vybavení</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl text-forest-700 leading-tight">
+        Co najdete uvnitř i venku
+      </h2>
+      <p class="mt-6 text-lg text-forest-700/80 leading-relaxed">
+        Jednoduché, promyšlené zázemí pro pohodlný pobyt. Nic navíc, nic, co by
+        chybělo.
+      </p>
+    </div>
+
+    <ul class="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      {items.map((it) => (
+        <li class="flex items-center gap-4 bg-white/60 border border-cream-200 rounded-sm px-5 py-4">
+          <span class="text-forest-500 shrink-0" aria-hidden="true">
+            {it.icon === "wifi" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/><path d="M2 9a15 15 0 0 1 20 0"/></svg>
+            )}
+            {it.icon === "laptop" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
+            )}
+            {it.icon === "kitchen" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14"/><path d="M6 11v9h12v-9"/><path d="M8 4v6"/><path d="M16 4v6"/><path d="M12 4v6"/></svg>
+            )}
+            {it.icon === "fridge" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M6 10h12"/><path d="M9 6.5v1.5"/><path d="M9 13v2.5"/></svg>
+            )}
+            {it.icon === "stove" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1.5"/><circle cx="9" cy="9" r="1.5"/><circle cx="15" cy="9" r="1.5"/><circle cx="9" cy="15" r="1.5"/><circle cx="15" cy="15" r="1.5"/></svg>
+            )}
+            {it.icon === "coffee" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2"/><path d="M8 3c0 1.5 1 1.5 1 3M12 3c0 1.5 1 1.5 1 3"/></svg>
+            )}
+            {it.icon === "bath" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-3z"/><path d="M6 12V6a2 2 0 0 1 4 0"/><path d="M5 19v2M19 19v2"/></svg>
+            )}
+            {it.icon === "shower" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V9a4 4 0 0 1 8 0"/><circle cx="14" cy="6" r="2"/><path d="M9 15v.01M12 17v.01M9 19v.01M12 20v.01M15 17v.01M15 20v.01"/></svg>
+            )}
+            {it.icon === "toilet" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v6H6z"/><path d="M5 10h14l-2 7H7z"/><path d="M10 17v3M14 17v3"/></svg>
+            )}
+            {it.icon === "heat" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2 3 2 4 0 7s 2 4 0 7"/><path d="M7 6c-1.5 2 1.5 3 0 5"/><path d="M17 6c-1.5 2 1.5 3 0 5"/></svg>
+            )}
+            {it.icon === "ac" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="8" rx="1.5"/><path d="M6 9h12"/><path d="M8 16v1M12 16v3M16 16v1"/></svg>
+            )}
+            {it.icon === "deck" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h18"/><path d="M5 14v6M19 14v6M9 14v6M15 14v6"/><path d="M4 10l8-5 8 5"/></svg>
+            )}
+            {it.icon === "grill" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-2 6a4 4 0 0 1-4 3h-4a4 4 0 0 1-4-3z"/><path d="M9 17l-2 4M15 17l2 4"/><path d="M9 4c0 1.5 1.5 1.5 1.5 3M13 4c0 1.5 1.5 1.5 1.5 3"/></svg>
+            )}
+            {it.icon === "fire" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 4 5 5 5 9a5 5 0 1 1-10 0c0-2 1-3 2-4 0 2 1 2 1 4 0-3 2-5 2-9z"/></svg>
+            )}
+            {it.icon === "parking" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M10 17V8h3.5a2.5 2.5 0 0 1 0 5H10"/></svg>
+            )}
+            {it.icon === "linen" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c4-3 12-3 16 0"/><path d="M4 7v12h16V7"/><path d="M9 11v6M15 11v6"/></svg>
+            )}
+          </span>
+          <span class="text-forest-700">{it.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

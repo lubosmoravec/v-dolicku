@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vdolicku.cz/sitemap-index.xml

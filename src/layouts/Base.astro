@@ -1,0 +1,74 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "V Dolíčku — klidné ubytování v tiny housu v podhůří Orlických hor",
+  description = "Útulný tiny house pro dva na samotě u lesa, s velkou terasou, výhledem do přírody a prostorem pro odpočinek i práci na dálku.",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL("/images/hero.jpg", Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#283a25" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="canonical" href={canonical} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      name: "V Dolíčku",
+      description,
+      url: "https://vdolicku.cz",
+      image: ogImage,
+      maximumAttendeeCapacity: 2,
+      amenityFeature: [
+        "Wi-Fi",
+        "Pracovní místo",
+        "Kuchyňka",
+        "Koupelna",
+        "Terasa",
+        "Gril",
+        "Ohniště",
+        "Parkování",
+      ],
+    })} />
+  </head>
+  <body>
+    <a
+      href="#hlavni-obsah"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-forest-700 focus:text-cream-50 focus:px-4 focus:py-2 focus:rounded"
+    >
+      Přeskočit na obsah
+    </a>
+    <slot />
+  </body>
+</html>

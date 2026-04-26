@@ -1,0 +1,45 @@
+---
+const items = [
+  "Páry na klidný nebo romantický víkend",
+  "Jednotlivce hledající ticho a samotu",
+  "Lidi pracující na dálku",
+  "Hosty, kteří chtějí digitální detox",
+  "Ty, kdo chtějí vyměnit město za les, terasu a výhled do zeleně",
+];
+---
+
+<section id="pro-koho" class="py-24 sm:py-32 bg-forest-700 text-cream-50">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-14 items-start">
+    <div>
+      <p class="text-cream-200 uppercase tracking-widest text-xs mb-4">Pro koho je pobyt</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl leading-tight">
+        Místo pro ty, kteří nepotřebují mnoho
+      </h2>
+      <p class="mt-7 text-lg text-cream-100/90 leading-relaxed">
+        V Dolíčku najdou prostor ti, kteří nepotřebují mnoho. Jen klid, pohodlí,
+        přírodu kolem sebe a čas, který může plynout pomaleji.
+      </p>
+    </div>
+
+    <ul class="space-y-4">
+      {items.map((it) => (
+        <li class="flex gap-4 border-b border-cream-50/15 pb-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 mt-1 shrink-0 text-cream-200"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 12.5l5 5L20 6.5" />
+          </svg>
+          <span class="text-cream-50/95 leading-relaxed">{it}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
